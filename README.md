@@ -1,6 +1,16 @@
 # TDD-in-a-Box
 
-Everything you need to replicate the DroidForge Autopilot + Task-master workflow in a brand-new repository.
+TDD-in-a-Box is a ready-to-run starter bundle that wires Task-master task orchestration, Autopilot’s RED→GREEN→COMMIT loop, and mandatory guardrails into any repository so automated agents and humans can ship code safely.
+
+**Top benefits for novice developers**
+- Clear guardrails that prevent skipping planning, testing, or review steps.
+- Turnkey scripts and documentation so getting from “blank repo” to TDD workflow is copy-paste simple.
+- Built-in handoff notes and logging templates that make teamwork transparent.
+
+**Top benefits for expert developers**
+- Codified RED→GREEN discipline keeps large teams aligned on quality without micromanagement.
+- Autopilot-aware scripts remove toil when spinning up new projects or enforcing house rules.
+- Portable docs and guardrails make it easy to enforce consistent contributions across multiple repos.
 
 ## Contents
 
@@ -22,7 +32,7 @@ tdd-in-a-box/
 ## How to use this kit
 
 1. Copy the entire `tdd-in-a-box/` folder into your new repository’s root.
-2. Run through `docs/guides/autopilot-tdd-stack-setup.md` step-by-step to install dependencies, initialize Task-master, and wire up guardrails.
+2. Either follow `docs/guides/autopilot-tdd-stack-setup.md` step-by-step, point an agent at `auto-install/setup4agents.json` for shell-based automation, or use `auto-install/repo_guidance.json` when the agent is operating purely through repository edits without direct command execution.
 3. After setup, share `docs/guides/autopilot-agent-runbook.md` with every agent. It references the other two guides and scripts so the workflow stays consistent.
 4. Commit the copied files so future clones inherit the same process.
 
