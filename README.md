@@ -6,6 +6,7 @@ TDD-in-a-Box is a ready-to-run starter bundle that wires Task-master task orches
 - Clear guardrails that prevent skipping planning, testing, or review steps.
 - Turnkey scripts and documentation so getting from “blank repo” to TDD workflow is copy-paste simple.
 - Built-in handoff notes and logging templates that make teamwork transparent.
+- Auto installer included "Hey agent install setup4agents.json" and your repo is set up in seconds.
 
 **Top benefits for expert developers**
 - Codified RED→GREEN discipline keeps large teams aligned on quality without micromanagement.
