@@ -2,6 +2,39 @@
 
 Welcome! Follow every step below before touching code. These rules keep the Autopilot + Task-master workflow sane.
 
+## First-time setup (run once per fresh repo)
+
+If the TDD-in-a-Box assets were just copied into this repository, run the automation plan in `auto-install/setup4agents.json`. It mirrors the steps below so agents can either execute the JSON or follow this manual checklist:
+
+1. Copy the bundle contents into the repo root (skip if already done):
+   ```bash
+   cp -R tdd-in-a-box/* ./
+   ```
+2. Install Task-master and scaffold its state:
+   ```bash
+   npm install --save-dev task-master-ai
+   npx task-master init
+   ```
+3. Make the helper scripts executable:
+   ```bash
+   chmod +x scripts/start-agent-work.sh
+   chmod +x scripts/autopilot-reset.sh
+   chmod +x scripts/autopilot-wrapup.sh
+   ```
+4. Smoke-test the guardrails:
+   ```bash
+   npx task-master list --with-subtasks
+   ./scripts/start-agent-work.sh || true
+   npx task-master autopilot status || true
+   ```
+5. If you want Autopilot branches prefixed with something other than `master`, edit `.taskmaster/config.json` and change `"defaultTag"` to your preferred prefix (for example `"tdd"`), then run:
+   ```bash
+   npx task-master add-tag <prefix> --copy-from-current || true
+   npx task-master use-tag <prefix>
+   ```
+
+For drift checks after setup, use `auto-install/repo_guidance.json` as a machine-readable validator.
+
 ## Mandatory pre-session ritual
 
 1. Read `docs/guides/taskmaster-guardrails.md` (rituals, subtask lifecycle, drift checks).
